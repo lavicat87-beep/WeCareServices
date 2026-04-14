@@ -1,0 +1,5 @@
+ndis_provider/
+├── app.py              # Your main Python code
+├── requirements.txt    # List of libraries
+├── static/             # CSS, Images, Logos
+└── templates/          # HTML files (index.html, services.html, contact.html)
