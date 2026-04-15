@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: wecare-services
+    env: python
+    pythonVersion: 3.12.12
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    plan: starter
+    envVars:
+      - key: DATABASE_URL
+        value: ${DATABASE_URL}
