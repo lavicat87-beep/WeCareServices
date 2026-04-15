@@ -30,3 +30,6 @@ def referral():
         # Logic to save referral to database
         return redirect('/')
     return render_template('referral.html')
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
