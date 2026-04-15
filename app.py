@@ -13,6 +13,9 @@ if sqlalchemy_database_uri.startswith('postgres://'):
     sqlalchemy_database_uri = sqlalchemy_database_uri.replace('postgres://', 'postgresql+pg8000://', 1)
 elif sqlalchemy_database_uri.startswith('postgresql://'):
     sqlalchemy_database_uri = sqlalchemy_database_uri.replace('postgresql://', 'postgresql+pg8000://', 1)
+if sqlalchemy_database_uri.startswith('postgresql+pg8000://') and 'sslmode=' not in sqlalchemy_database_uri:
+    separator = '&' if '?' in sqlalchemy_database_uri else '?'
+    sqlalchemy_database_uri += f'{separator}sslmode=require'
 app.config['SQLALCHEMY_DATABASE_URI'] = sqlalchemy_database_uri
 db = SQLAlchemy(app, model_class=Base)
 
