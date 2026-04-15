@@ -8,7 +8,12 @@ class Base(DeclarativeBase):
 
 app = Flask(__name__)
 # Use PostgreSQL for professional business data
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///ndis.db')
+sqlalchemy_database_uri = os.environ.get('DATABASE_URL', 'sqlite:///ndis.db')
+if sqlalchemy_database_uri.startswith('postgres://'):
+    sqlalchemy_database_uri = sqlalchemy_database_uri.replace('postgres://', 'postgresql+pg8000://', 1)
+elif sqlalchemy_database_uri.startswith('postgresql://'):
+    sqlalchemy_database_uri = sqlalchemy_database_uri.replace('postgresql://', 'postgresql+pg8000://', 1)
+app.config['SQLALCHEMY_DATABASE_URI'] = sqlalchemy_database_uri
 db = SQLAlchemy(app, model_class=Base)
 
 class Referral(db.Model):
