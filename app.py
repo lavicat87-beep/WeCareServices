@@ -1,22 +1,24 @@
-from flask import Flask, render_template, request, redirect
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 import os
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.orm import DeclarativeBase
 
 class Base(DeclarativeBase):
     pass
 
 app = Flask(__name__)
-# Use PostgreSQL for professional business data
-sqlalchemy_database_uri = os.environ.get('DATABASE_URL', 'sqlite:///ndis.db')
-if sqlalchemy_database_uri.startswith('postgres://'):
-    sqlalchemy_database_uri = sqlalchemy_database_uri.replace('postgres://', 'postgresql+pg8000://', 1)
-elif sqlalchemy_database_uri.startswith('postgresql://'):
-    sqlalchemy_database_uri = sqlalchemy_database_uri.replace('postgresql://', 'postgresql+pg8000://', 1)
-if sqlalchemy_database_uri.startswith('postgresql+pg8000://') and 'sslmode=' not in sqlalchemy_database_uri:
-    separator = '&' if '?' in sqlalchemy_database_uri else '?'
-    sqlalchemy_database_uri += f'{separator}sslmode=require'
-app.config['SQLALCHEMY_DATABASE_URI'] = sqlalchemy_database_uri
+
+# 1. Get the URL from Render's Environment
+uri = os.environ.get('DATABASE_URL', 'sqlite:///ndis.db')
+
+# 2. Update the prefix to use pg8000
+if uri.startswith("postgres://"):
+    uri = uri.replace("postgres://", "postgresql+pg8000://", 1)
+elif uri.startswith("postgresql://"):
+    uri = uri.replace("postgresql://", "postgresql+pg8000://", 1)
+
+# Note: We removed the 'sslmode' logic here because pg8000 doesn't support it.
+app.config['SQLALCHEMY_DATABASE_URI'] = uri
 db = SQLAlchemy(app, model_class=Base)
 
 class Referral(db.Model):
