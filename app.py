@@ -1,7 +1,7 @@
 import os
-from flask import Flask
+from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.orm import DeclarativeBase
+from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 
 class Base(DeclarativeBase):
     pass
@@ -17,8 +17,14 @@ if uri.startswith("postgres://"):
 elif uri.startswith("postgresql://"):
     uri = uri.replace("postgresql://", "postgresql+pg8000://", 1)
 
-# Note: We removed the 'sslmode' logic here because pg8000 doesn't support it.
+# pg8000 doesn't support sslmode in the URL; pass ssl via connect_args instead
 app.config['SQLALCHEMY_DATABASE_URI'] = uri
+if uri.startswith("postgresql+pg8000://"):
+    import ssl
+    ssl_context = ssl.create_default_context()
+    ssl_context.check_hostname = False
+    ssl_context.verify_mode = ssl.CERT_NONE
+    app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {'connect_args': {'ssl_context': ssl_context}}
 db = SQLAlchemy(app, model_class=Base)
 
 class Referral(db.Model):
