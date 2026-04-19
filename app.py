@@ -43,7 +43,13 @@ def home():
 @app.route('/referral', methods=['POST', 'GET'])
 def referral():
     if request.method == 'POST':
-        # Logic to save referral to database
+        referral = Referral(
+            client_name=request.form['client_name'],
+            contact_number=request.form['contact_number'],
+            service_needed=request.form['service_needed']
+        )
+        db.session.add(referral)
+        db.session.commit()
         return redirect('/')
     return render_template('referral.html')
 

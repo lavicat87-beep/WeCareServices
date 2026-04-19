@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make a Referral - WeCare Services</title>
+</head>
+<body>
+    <main>
+        <h1>Make a Referral</h1>
+        <form method="POST" action="/referral">
+            <label for="client_name">Client Name</label>
+            <input type="text" id="client_name" name="client_name" required>
+
+            <label for="contact_number">Contact Number</label>
+            <input type="tel" id="contact_number" name="contact_number" required>
+
+            <label for="service_needed">Service Needed</label>
+            <input type="text" id="service_needed" name="service_needed" required>
+
+            <button type="submit">Submit Referral</button>
+        </form>
+        <a href="/">Back to Home</a>
+    </main>
+</body>
+</html>
