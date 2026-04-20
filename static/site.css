@@ -306,33 +306,6 @@ a {
     color: var(--navy);
 }
 
-.event-list {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.event-item {
-    border: 1px solid rgba(15, 47, 79, 0.15);
-    background: var(--white);
-    border-radius: 16px;
-    padding: 1rem;
-}
-
-.event-item h3 {
-    margin: 0.25rem 0 0.35rem;
-    color: var(--navy);
-}
-
-.event-date {
-    color: var(--ocean);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-weight: 700;
-    font-size: 0.83rem;
-}
-
 .newsletter {
     margin: 1rem 0 0;
     padding: 2.2rem 0;
@@ -482,7 +455,6 @@ a {
     .cards,
     .page-grid,
     .band,
-    .event-list,
     .two-col,
     .newsletter-inner,
     .footer-grid {
