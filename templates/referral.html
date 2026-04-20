@@ -4,23 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Make a Referral - WeCare Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='site.css') }}">
 </head>
 <body>
-    <main>
-        <h1>Make a Referral</h1>
-        <form method="POST" action="/referral">
-            <label for="client_name">Client Name</label>
-            <input type="text" id="client_name" name="client_name" required>
+    <header class="header">
+        <div class="wrapper header-inner">
+            <a class="logo" href="/">
+                <img src="{{ url_for('static', filename='logo.svg') }}" alt="WeCare Services logo">
+            </a>
+            <nav class="nav">
+                <a href="/">Home</a>
+                <a class="button button-soft" href="/">Back to Home</a>
+            </nav>
+        </div>
+    </header>
 
-            <label for="contact_number">Contact Number</label>
-            <input type="tel" id="contact_number" name="contact_number" required>
+    <main class="page reveal">
+        <div class="wrapper page-grid">
+            <section>
+                <p class="eyebrow">Referral Form</p>
+                <h1 class="page-title">Make a referral</h1>
+                <p class="section-intro">
+                    Complete the form and our team will be in touch to discuss suitable NDIS support options.
+                    We aim to respond quickly and respectfully.
+                </p>
 
-            <label for="service_needed">Service Needed</label>
-            <input type="text" id="service_needed" name="service_needed" required>
+                <article class="info-box">
+                    <h3>What to include</h3>
+                    <ul>
+                        <li>Correct client name and best contact number</li>
+                        <li>Primary support area needed right now</li>
+                        <li>Any urgency or preferred contact times</li>
+                    </ul>
+                </article>
+            </section>
 
-            <button type="submit">Submit Referral</button>
-        </form>
-        <a href="/">Back to Home</a>
+            <section class="form-card">
+                <form method="POST" action="/referral">
+                    <label for="client_name">Client Name</label>
+                    <input type="text" id="client_name" name="client_name" required>
+
+                    <label for="contact_number">Contact Number</label>
+                    <input type="tel" id="contact_number" name="contact_number" required>
+
+                    <label for="service_needed">Service Needed</label>
+                    <input type="text" id="service_needed" name="service_needed" required>
+
+                    <button class="button button-primary" type="submit">Submit Referral</button>
+                </form>
+            </section>
+        </div>
     </main>
+
+    <footer class="footer">
+        <div class="wrapper">
+            <small>WeCare Services | Thank you for supporting participant wellbeing</small>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='site.js') }}"></script>
 </body>
 </html>

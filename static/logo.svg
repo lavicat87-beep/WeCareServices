@@ -1,0 +1,15 @@
+<svg width="320" height="90" viewBox="0 0 320 90" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">WeCare Services Logo</title>
+  <desc id="desc">A heart and cross motif with WeCare Services wordmark.</desc>
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1E608F"/>
+      <stop offset="100%" stop-color="#4FA2C6"/>
+    </linearGradient>
+  </defs>
+  <rect x="6" y="8" width="72" height="72" rx="18" fill="url(#g1)"/>
+  <path d="M42 60C31 52 22 45 22 35C22 28 27 23 34 23C38 23 41 25 43 29C45 25 48 23 52 23C59 23 64 28 64 35C64 45 55 52 44 60L43 61L42 60Z" fill="white"/>
+  <path d="M41 32H45V38H51V42H45V48H41V42H35V38H41V32Z" fill="#1E608F"/>
+  <text x="92" y="42" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="28" font-weight="700" fill="#10324F">WeCare</text>
+  <text x="92" y="66" font-family="Source Sans 3, Segoe UI, sans-serif" font-size="20" font-weight="600" fill="#2E5E7D">Services</text>
+</svg>

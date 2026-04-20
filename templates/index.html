@@ -4,12 +4,236 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WeCare Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='site.css') }}">
 </head>
 <body>
+    <header class="header">
+        <div class="wrapper header-inner">
+            <a class="logo" href="/">
+                <img src="{{ url_for('static', filename='logo.svg') }}" alt="WeCare Services logo">
+            </a>
+            <nav class="nav">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#values">Values</a>
+                <a href="#events">Events</a>
+                <a href="#resources">Resources</a>
+                <a href="#contact">Contact</a>
+                <a class="button button-soft" href="/referral">Referral</a>
+            </nav>
+        </div>
+    </header>
+
     <main>
-        <h1>Empowering Independence in New South Wales</h1>
-        <p>Providing compassionate Core Supports tailored to your NDIS plan.</p>
-        <a href="/referral">Make a Referral</a>
+        <section class="hero reveal">
+            <div class="wrapper hero-grid">
+                <div>
+                    <p class="eyebrow">Independent Not-for-Profit Style Care</p>
+                    <h1>Person-centred disability support for everyday life</h1>
+                    <p>
+                        WeCare Services delivers responsive NDIS and private supports across New South Wales,
+                        focused on inclusion, dignity, and practical outcomes for participants and families.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="button button-primary" href="#services">Our Services</a>
+                        <a class="button button-soft" href="/referral">Make a Referral</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1000&q=80" alt="Support worker assisting participant at home">
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section reveal">
+            <div class="wrapper">
+                <h2 class="section-title">Who we are</h2>
+                <p class="section-intro">
+                    WeCare Services is a community-minded provider committed to human rights and personalised care.
+                    We work closely with participants, families, and support coordinators to build safe, flexible supports.
+                </p>
+            </div>
+        </section>
+
+        <section id="services" class="section reveal">
+            <div class="wrapper">
+                <h2 class="section-title">Disability supports</h2>
+                <p class="section-intro">
+                    Our services are designed around each participant's goals, with practical delivery across home,
+                    community, and daily routines.
+                </p>
+                <div class="cards">
+                    <article class="card">
+                        <img src="https://images.unsplash.com/photo-1457666134378-6b77915bd5f2?auto=format&fit=crop&w=900&q=80" alt="Day program activity with participants">
+                        <h3>Community Participation</h3>
+                        <p>Structured day supports, appointments, outings, and social connection activities.</p>
+                    </article>
+                    <article class="card">
+                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=80" alt="Supported independent living home visit">
+                        <h3>Home and Living</h3>
+                        <p>Reliable home support with personal care, domestic assistance, and routine planning.</p>
+                    </article>
+                    <article class="card">
+                        <img src="https://images.unsplash.com/photo-1531988042231-d39a9cc12a9a?auto=format&fit=crop&w=900&q=80" alt="Support worker helping with mobility and wellbeing">
+                        <h3>Home Support Services</h3>
+                        <p>24/7 availability options for personal care, transport, and community access.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <div class="wrapper">
+            <section class="band reveal">
+                <div>
+                    <h2 class="section-title">Need support right away?</h2>
+                    <p>Email hello@wecare.org.au or call 0477 605 303. We can guide you through referral options.</p>
+                </div>
+                <a class="button button-soft" href="/referral">Fill Referral Form</a>
+            </section>
+        </div>
+
+        <section id="values" class="section reveal">
+            <div class="wrapper">
+                <h2 class="section-title">Our values</h2>
+                <div class="cards values-grid">
+                    <article class="card icon-card">
+                        <div class="icon">R</div>
+                        <h3>Respect</h3>
+                        <p>We listen carefully and honour each person's choices and lived experience.</p>
+                    </article>
+                    <article class="card icon-card">
+                        <div class="icon">G</div>
+                        <h3>Growth</h3>
+                        <p>We focus on strengths, learning together and supporting everyday progress.</p>
+                    </article>
+                    <article class="card icon-card">
+                        <div class="icon">A</div>
+                        <h3>Adapt</h3>
+                        <p>We stay flexible and creative so supports remain responsive and meaningful.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section mission reveal">
+            <div class="wrapper two-col">
+                <article>
+                    <h2 class="section-title">Our mission</h2>
+                    <p class="section-intro">
+                        To provide individualised support services that uphold the rights of people with disability,
+                        promoting inclusion, dignity, and advocacy.
+                    </p>
+                </article>
+                <article class="soft-panel">
+                    <h3>Get involved</h3>
+                    <p>
+                        Join community events, partner with our team, or support participant-focused initiatives.
+                    </p>
+                    <a class="button button-primary" href="#contact">Contact Us</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="events" class="section reveal">
+            <div class="wrapper">
+                <h2 class="section-title">Upcoming events</h2>
+                <div class="event-list">
+                    <article class="event-item">
+                        <p class="event-date">14 June 2026</p>
+                        <h3>Family and Carers Information Session</h3>
+                        <p>An open forum to discuss planning, service transitions, and participant wellbeing.</p>
+                    </article>
+                    <article class="event-item">
+                        <p class="event-date">27 August 2026</p>
+                        <h3>Community Inclusion Day</h3>
+                        <p>Group activities and local partnerships celebrating inclusion, creativity, and connection.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section reveal">
+            <div class="wrapper two-col">
+                <article class="soft-panel">
+                    <h3>Complaints and feedback</h3>
+                    <p>We value your input and provide clear pathways to share feedback, concerns, or compliments.</p>
+                    <a class="button button-soft" href="/referral">Share Feedback</a>
+                </article>
+                <article class="soft-panel">
+                    <h3>Advocacy and rights</h3>
+                    <p>We stand for participant voice, safety, and inclusive service delivery across all programs.</p>
+                    <a class="button button-soft" href="#about">Learn More</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="resources" class="section reveal">
+            <div class="wrapper">
+                <h2 class="section-title">Featured resources</h2>
+                <div class="cards">
+                    <article class="card">
+                        <h3>Policies and Procedures</h3>
+                        <p>Read the standards and processes guiding quality, safety, and participant care.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Publications</h3>
+                        <p>Browse annual updates, service information, and practical participant guides.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Service Enquiry</h3>
+                        <p>Start a new enquiry for home support, community access, or plan-based supports.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="newsletter reveal">
+            <div class="wrapper newsletter-inner">
+                <div>
+                    <p class="eyebrow">Join Our Newsletter</p>
+                    <h2 class="section-title">Stay connected with updates</h2>
+                    <p>Receive quarterly stories, event dates, and service improvements from our team.</p>
+                </div>
+                <form class="newsletter-form" action="#" method="post">
+                    <label for="newsletter-email" class="sr-only">Email address</label>
+                    <input id="newsletter-email" type="email" placeholder="Your email address" required>
+                    <button class="button button-primary" type="submit">Submit</button>
+                </form>
+            </div>
+        </section>
     </main>
+
+    <footer id="contact" class="footer deep-footer">
+        <div class="wrapper footer-grid">
+            <section>
+                <h3>Contact details</h3>
+                <p>Head Office: Leura, NSW</p>
+                <p>Phone: 0477 605 303</p>
+                <p>Email: hello@wecare.org.au</p>
+            </section>
+            <section>
+                <h3>Governance and privacy</h3>
+                <p>ABN: 48 002 905 802</p>
+                <p>NDIS Registration ID: 70185749</p>
+                <p>Privacy Policy | Website Disclaimer</p>
+            </section>
+            <section>
+                <h3>Meet WeCare</h3>
+                <p><a href="#about">About Us</a></p>
+                <p><a href="#services">Services</a></p>
+                <p><a href="#resources">Resources</a></p>
+                <p><a href="/referral">Referral</a></p>
+            </section>
+        </div>
+        <div class="wrapper footer-bottom">
+            <p>Acknowledgement of Country: We honour Traditional Custodians and Elders past and present.</p>
+            <small>© 2026 WeCare Services</small>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='site.js') }}"></script>
 </body>
 </html>
