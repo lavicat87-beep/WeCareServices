@@ -1,0 +1,2 @@
+age-care.jpg, community.jpg, home-living.jpg
+Example: hero.jpg, service-1.png
